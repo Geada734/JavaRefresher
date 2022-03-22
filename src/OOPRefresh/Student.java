@@ -22,6 +22,16 @@ public class Student extends Person{
 		this.fee = 0.0;
 	};
 	
+	public Student(Person person, String program, int year, double fee) {
+		this.name = person.getName();
+		this.address = person.getAddress();
+		this.program = program;
+		this.year = year;
+		this.fee = fee;
+		this.year = 2000;
+		this.fee = 0.0;
+	};
+	
 	public String getProgram() {
 		return this.program;
 	};

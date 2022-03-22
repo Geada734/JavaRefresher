@@ -7,6 +7,7 @@ public class main {
 	public static void main(String[] args) {
 		// Basic exercises
 	    System.out.println("******************************");
+	    
 		Circle circle = new Circle();
 		
 		System.out.println("-Default circle structure:");
@@ -51,13 +52,20 @@ public class main {
 	    System.out.println("\n");
 	    System.out.println(acc2);
 	    System.out.println("******************************");
-	    
 	    // Inheritance exercises
 	    Cylinder cylinder = new Cylinder(circle, 3.0);
 	    
 	    System.out.println(cylinder.getArea());
 	    System.out.println(cylinder.getVolume());
 	    System.out.println(cylinder);
+	    System.out.println("******************************");
+	    
+	    Person person = new Person("Paco Gerte", "Somewhere in Tampico");
+	    Staff staff = new Staff(person, 8000.0, "ITESM");
+	    Student student = new Student(person, "ISC", 2018, 9000.0);
+	    System.out.println(person);
+	    System.out.println(staff);
+	    System.out.println(student);
 	    System.out.println("******************************");
 	}
 

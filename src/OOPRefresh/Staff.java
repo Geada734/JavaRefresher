@@ -11,6 +11,13 @@ public class Staff extends Person {
 		this.school = "Unknown";
 	};
 	
+	public Staff(Person person, double pay, String school) {
+		this.name = person.getName();
+		this.address = person.getAddress();
+		this.pay = pay;
+		this.school = school;
+	};
+	
 	public Staff(String name, String address, double pay, String school) {
 		super(name, address);
 		this.pay = pay;
