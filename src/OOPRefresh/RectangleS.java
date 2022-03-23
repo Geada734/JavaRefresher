@@ -1,5 +1,6 @@
 package OOPRefresh;
 
+//Class created for OOP practice exercises on polymorphism.
 public class RectangleS extends Shape{
 	private double width;
 	private double height;

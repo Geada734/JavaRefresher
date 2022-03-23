@@ -1,5 +1,6 @@
 package OOPRefresh;
 
+//Class created for OOP practice exercises on polymorphism.
 public abstract class Shape {
 	protected String color;
 	protected boolean filled;

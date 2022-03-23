@@ -1,6 +1,6 @@
 package OOPRefresh;
 
-//OOP exercises, from basic to polymorphism.
+//OOP exercises, from basics to polymorphism.
 
 public class main {
 

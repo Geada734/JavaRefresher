@@ -1,5 +1,6 @@
 package OOPRefresh;
 
+//Class created for OOP practice exercises on polymorphism.
 public class CircleS extends Shape {
 	private double radius;
 
