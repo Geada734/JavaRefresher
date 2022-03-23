@@ -67,6 +67,23 @@ public class main {
 	    System.out.println(staff);
 	    System.out.println(student);
 	    System.out.println("******************************");
+	    // Polymorphism excercises	    
+	    Shape circleS = new CircleS();
+	    CircleS circleS2 = (CircleS) circleS;
+	    Shape rectangleS = new RectangleS();
+	    RectangleS rectangleS2 = (RectangleS) rectangleS;
+	    RectangleS rectangleS3 = new RectangleS(circleS, 3.0, 4.0);
+	    
+	    System.out.println(circleS);
+	    System.out.println("------------------------------");
+	    System.out.println(circleS2);
+	    System.out.println("------------------------------");
+	    System.out.println(rectangleS);
+	    System.out.println("------------------------------");
+	    System.out.println(rectangleS2);  
+	    System.out.println("------------------------------");
+	    System.out.println(rectangleS3);  
+	    System.out.println("******************************");
 	}
 
 }
