@@ -68,4 +68,56 @@ public class RecursiveExercises {
 		return 0;
 	};
 	
+	public String changePi(String str) {
+		if(str.length()>1) {
+			if(str.charAt(0) == 'p' && str.charAt(1) == 'i') {
+				return "3.14" + changePi(str.substring(2));
+			}
+			else {
+				return str.charAt(0) + changePi(str.substring(1));
+			}
+		};
+		
+		return str;
+	};
+	
+	public int array11(int[] nums, int index) {
+		if(index<nums.length) {
+			if(nums[index]==11) {
+				return 1 + array11(nums, index+1);
+			}
+			else {
+				return array11(nums, index+1);
+			}
+		};
+		
+		return 0;
+	};
+	
+	public String pairStar(String str) {
+		if(str.length()>1) {
+			if(str.charAt(0)==str.charAt(1)) {
+				return str.charAt(0) + "*" + pairStar(str.substring(1));
+			}
+			else {
+				return str.charAt(0) + pairStar(str.substring(1));
+			}
+		};
+		
+		return str;
+	};
+	
+	public int countAbc(String str) {
+		if(str.length()>2) {
+			if(str.substring(0, 3).equals("abc") || str.substring(0, 3).equals("aba")) {
+				return 1 + countAbc(str.substring(1));
+			}
+			else {
+				return countAbc(str.substring(1));
+			}
+		};
+		
+		return 0;
+	};
+	
 };

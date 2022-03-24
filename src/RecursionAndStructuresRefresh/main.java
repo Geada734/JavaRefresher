@@ -31,6 +31,23 @@ public class main {
 	    System.out.println("Count X: ");
 	    System.out.println(countX);
 	    System.out.println("******************************");
+	    String changePi = recursionDriver.changePi("XXiopiuopixuo");
+	    System.out.println("Change Pi: ");
+	    System.out.println(changePi);
+	    System.out.println("******************************");
+	    int[] nums = {1, 11, 3, 11, 11};
+	    int array11 = recursionDriver.array11(nums, 0);
+	    System.out.println("Array 11: ");
+	    System.out.println(array11);
+	    System.out.println("******************************");
+	    String pairStar = recursionDriver.pairStar("abbabbbaaaaabbbbcdf");
+	    System.out.println("Pair Star: ");
+	    System.out.println(pairStar);
+	    System.out.println("******************************");
+	    int countAbc = recursionDriver.countAbc("abbabbbaaaaabbbbcdfabaabc");
+	    System.out.println("Count ABC: ");
+	    System.out.println(countAbc);
+	    System.out.println("******************************");
 	};
 
 };
