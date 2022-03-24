@@ -120,4 +120,70 @@ public class RecursiveExercises {
 		return 0;
 	};
 	
+	public int countHi(String str) {
+	    if(str.length() <= 1) {
+	        return 0;
+	    };
+	          
+	    if(str.length() > 2 && str.substring(0, 3).equals("xhi")) {
+	        return countHi(str.substring(3));
+	    };
+	                    
+	    if(str.substring(0, 2).equals("hi")) {
+	        return 1 + countHi(str.substring(2));
+	    };
+	                            
+	    return countHi(str.substring(1));
+	};
+	
+	public int strCount(String str, String sub){
+		if(str.length()>=sub.length()) {
+			if(str.substring(0, sub.length()).equals(sub)){
+				return 1 + strCount(str.substring(sub.length()), sub);
+			}
+			else {
+				return strCount(str.substring(1), sub);
+			}
+		};
+		
+		return 0;
+	};
+	
+	public int count8(int n) {
+		if(n>0) {
+			if(n%10==8) {
+				if(n%100==88) {
+					return 2 + count8(n/10);
+				}
+				
+				return 1 + count8(n/10);
+			}
+			
+			return count8(n/10);
+		};
+		
+		return 0;
+	};
+	
+	public String noX(String str) {
+		if(str.length()>0) {
+			if(str.charAt(0)=='x') {
+				return noX(str.substring(1));
+			};
+			
+			return str.charAt(0) + noX(str.substring(1));
+		};
+		
+		return str;
+	};
+	
+
+	public boolean array220(int[] nums, int index) {
+	    if(index >= nums.length - 1) {
+	        return false;
+	    };
+	          
+	    return nums[index+1] == 10 * nums[index] || array220(nums, index + 1);
+	};
+	
 };
