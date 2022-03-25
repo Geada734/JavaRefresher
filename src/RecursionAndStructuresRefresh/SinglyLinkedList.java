@@ -25,7 +25,7 @@ public class SinglyLinkedList<T>{
 		this.length = arr.length;
 		Node current = this.head;
 		
-		for(int i=0; i<arr.length; i++) {
+		for(int i=1; i<arr.length; i++) {
 			current.next = new Node(arr[i]);
 			current = current.next;
 		};
