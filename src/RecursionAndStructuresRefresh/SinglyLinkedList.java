@@ -78,6 +78,10 @@ public class SinglyLinkedList<T>{
 		};
 	};
 	
+	public void add(T data) {
+		this.add(this.length, data);
+	};
+	
 	public int getLength() {
 		return this.length;
 	};
