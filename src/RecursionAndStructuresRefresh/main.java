@@ -114,6 +114,9 @@ public class main {
 	    System.out.println(slList);
 	    slList.add(7, 14);
 	    System.out.println(slList);
+	    SinglyLinkedList<Integer> slListEmpty = new SinglyLinkedList();
+	    slListEmpty.add(33, 111);
+	    System.out.println(slListEmpty);
 	    System.out.println("******************************");
 	    
 	};
