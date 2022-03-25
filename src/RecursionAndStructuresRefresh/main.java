@@ -5,6 +5,7 @@ public class main {
 
 	public static void main(String[] args) {
 		// Exercises on recursion.
+		/*
 		RecursiveExercises recursionDriver = new RecursiveExercises();
 	    System.out.println("******************************1");
 	    int sum = recursionDriver.sum(3);
@@ -94,6 +95,14 @@ public class main {
 	    System.out.println("Bottom Up Fibonacci: ");
 	    System.out.println(bottomUpFibonacci);
 	    System.out.println("******************************");
+	    */
+		// Exercises on data structures
+	    System.out.println("******************************");
+	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
+	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
+	    System.out.println(slList);
+	    System.out.println("******************************");
+	    
 	};
 
 };
