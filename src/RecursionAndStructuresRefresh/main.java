@@ -101,6 +101,19 @@ public class main {
 	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
 	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
 	    System.out.println(slList);
+	    System.out.println("-Adding terms");
+	    slList.add(0, 9);
+	    System.out.println(slList);
+	    slList.add(1, 10);
+	    System.out.println(slList);
+	    slList.add(-1, 11);
+	    System.out.println(slList);
+	    slList.add(10, 12);
+	    System.out.println(slList);
+	    slList.add(12, 13);
+	    System.out.println(slList);
+	    slList.add(7, 14);
+	    System.out.println(slList);
 	    System.out.println("******************************");
 	    
 	};
