@@ -1,5 +1,7 @@
 package RecursionAndStructuresRefresh;
 
+import RecursionAndStructuresRefresh.SimpleBinaryTree.Node;
+
 // Exercises on recursion, data structures, and algorithms.
 public class main {
 
@@ -166,6 +168,7 @@ public class main {
 	    System.out.println("******************************");
 	    */
 		// Singly Linked Circular List
+		/*
 	    System.out.println("******************************");
 	    Integer[] arr2CList = {1, 2, 3, 4, 5, 6, 7};
 		SinglyCircularList<Integer> scList = new SinglyCircularList(arr2CList);
@@ -230,7 +233,16 @@ public class main {
 	    scList.updateNode(10, 23);
 		System.out.println(scList);
 	    System.out.println("******************************");
-	    
+	    */
+		// Simple Binary Trees
+	    System.out.println("******************************");
+	    SimpleBinaryTree<Integer> binTree = new SimpleBinaryTree(1);
+	    binTree.root.left = binTree.createNode(2);
+	    binTree.root.right = binTree.createNode(3);
+	    binTree.root.left.left = binTree.createNode(4);
+	    binTree.root.left.right = binTree.createNode(5);
+	    System.out.println(binTree);
+	    System.out.println("******************************");
 	};
 
 };

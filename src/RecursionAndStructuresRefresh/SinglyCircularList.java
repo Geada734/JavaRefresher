@@ -1,6 +1,6 @@
 package RecursionAndStructuresRefresh;
 
-
+//My implementation of a circular linked list.
 public class SinglyCircularList<T>{
 	class Node<T>{
 		T data;
