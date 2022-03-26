@@ -96,9 +96,9 @@ public class main {
 	    System.out.println(bottomUpFibonacci);
 	    System.out.println("******************************");
 	    */
+		/*
 		// Exercises on data structures
 		// Singly linked list
-		/*
 	    System.out.println("******************************");
 	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
 	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
@@ -121,7 +121,7 @@ public class main {
 	    System.out.println(slListEmpty);
 	    slListEmpty.add(222);
 	    System.out.println(slListEmpty);
-	    // Test delete function.
+	    // Testing delete function.
 	    System.out.println("-Deleting terms");
 	    slList.delete(34);
 	    System.out.println(slList);
@@ -139,21 +139,36 @@ public class main {
 	    System.out.println(slListEmpty);
 	    slListEmpty.delete(0);
 	    System.out.println(slListEmpty);
-	    // Test clear function
+	    // Testing clear function
 	    slListEmpty.add(111);
 	    slListEmpty.add(222);
 	    slListEmpty.add(333);
 	    System.out.println(slListEmpty);
 	    slListEmpty.clear();
 	    System.out.println(slListEmpty);
+	    // Testing update function.
+	    slList.updateNode(-1, 15);
+	    System.out.println(slList);
+	    slList.updateNode(0, 16);
+	    System.out.println(slList);
+	    slList.updateNode(1, 17);
+	    System.out.println(slList);
+	    slList.updateNode(8, 18);
+	    System.out.println(slList);
+	    slList.updateNode(7, 19);
+	    System.out.println(slList);
+	    slList.updateNode(2, 20);
+	    System.out.println(slList);
+	    slList.updateNode(6, 21);
+	    System.out.println(slList);
 	    System.out.println("******************************");
-	    */
 		// Singly Linked Circular List
 	    System.out.println("******************************");
 	    Integer[] arr2CList = {1, 2, 3, 4, 5, 6, 7};
 		SinglyCircularList<Integer> scList = new SinglyCircularList(arr2CList);
 		System.out.println(scList);
 	    System.out.println("******************************");
+	    */
 	    
 	};
 

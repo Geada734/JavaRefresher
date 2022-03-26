@@ -115,6 +115,32 @@ public class SinglyLinkedList<T>{
 		};
 	};
 	
+	public void updateNode(int position, T data) {
+		Node current = this.head;
+		int counter = 1;
+		
+		if(current != null) {
+			if(position<=1) {
+				current.data = data;
+			}
+			else if(position>=this.length){
+				while(current.next != null) {
+					current = current.next;
+				};
+				
+				current.data = data;
+			}
+			else {
+				while(counter<position) {
+					current = current.next;
+					counter += 1;
+				};
+				
+				current.data = data;
+			};
+		};
+	};
+	
 	public void clear() {
 		this.head = null;
 		this.length = 0;
