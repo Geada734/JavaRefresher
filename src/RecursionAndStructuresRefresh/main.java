@@ -179,7 +179,7 @@ public class main {
 		System.out.println(scList);
 	    scList.add(1, 11);
 		System.out.println(scList);
-	    scList.add(11, 12);
+	    scList.add(12, 12);
 		System.out.println(scList);
 	    scList.add(1800, 13);
 		System.out.println(scList);
@@ -193,6 +193,17 @@ public class main {
 		System.out.println(scListEmpty);
 		scListEmpty.add(1111);
 		System.out.println(scListEmpty);
+	    System.out.println("-Deleting nodes");
+	    scList.delete(16);
+		System.out.println(scList);
+	    scList.delete(316);
+		System.out.println(scList);
+	    scList.delete(0);
+		System.out.println(scList);
+	    scList.delete(1);
+		System.out.println(scList);
+	    scList.delete(11);
+		System.out.println(scList);
 	    System.out.println("******************************");
 	    
 	};

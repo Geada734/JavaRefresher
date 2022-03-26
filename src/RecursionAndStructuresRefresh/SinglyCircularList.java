@@ -64,7 +64,7 @@ public class SinglyCircularList<T>{
 				current.next = this.head;
 				this.length += 1;
 			}
-			else if(position>=length){
+			else if(position>length){
 				while(current.next != this.head) {
 					current = current.next;
 				};
@@ -92,6 +92,49 @@ public class SinglyCircularList<T>{
 		else {
 			this.head = new Node(data);
 			this.head.next = this.head;
+			this.length += 1;
+		};
+	};
+	
+	public void delete(int position) {
+		if(head != null) {
+			if(this.length!=1) {
+				Node current = this.head;
+				int counter = 1;
+				
+				if(position<=1) {
+					Node oldHead = this.head;
+					this.head = current.next;
+					
+					while(current.next != oldHead) {
+						current = current.next;
+					};
+					
+					current.next = this.head;
+					this.length -= 1;
+				}
+				else if(position>=this.length) {
+					while(current.next.next!=this.head){
+						current = current.next;
+					};
+					
+					current.next = this.head;
+					this.length -= 1;
+				}
+				else {
+					while(counter<position-1) {
+						current = current.next;
+						counter += 1;
+					};
+					
+					current.next = current.next.next;
+					this.length -= 1;
+				};
+			}
+			else {
+				this.head = null;
+				this.length = 0;
+			};
 		};
 	};
 	
