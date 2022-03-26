@@ -119,6 +119,31 @@ public class main {
 	    System.out.println(slListEmpty);
 	    slListEmpty.add(222);
 	    System.out.println(slListEmpty);
+	    // Test delete function.
+	    System.out.println("-Deleting terms");
+	    slList.delete(34);
+	    System.out.println(slList);
+	    slList.delete(12);
+	    System.out.println(slList);
+	    slList.delete(-1);
+	    System.out.println(slList);
+	    slList.delete(0);
+	    System.out.println(slList);
+	    slList.delete(1);
+	    System.out.println(slList);
+	    slList.delete(7);
+	    System.out.println(slList);
+	    slListEmpty.delete(2);
+	    System.out.println(slListEmpty);
+	    slListEmpty.delete(0);
+	    System.out.println(slListEmpty);
+	    // Test clear function
+	    slListEmpty.add(111);
+	    slListEmpty.add(222);
+	    slListEmpty.add(333);
+	    System.out.println(slListEmpty);
+	    slListEmpty.clear();
+	    System.out.println(slListEmpty);
 	    System.out.println("******************************");
 	    
 	};

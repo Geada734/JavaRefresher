@@ -82,6 +82,44 @@ public class SinglyLinkedList<T>{
 		this.add(this.length, data);
 	};
 	
+	public void delete(int position) {
+		Node current = this.head;
+		int counter = 1;
+		
+		if(current!=null) {
+			if(this.length==1) {
+				this.head = null;
+				this.length = 0;
+			}
+			else if(position<=1) {
+				this.head = current.next;
+				this.length -= 1;
+			}
+			else if(position>=this.length) {
+				while(current.next.next!=null) {
+					current = current.next;
+				};
+				
+				current.next = null;
+				this.length -= 1;
+			}
+			else {
+				while(counter<position-1) {
+					counter += 1;
+					current =  current.next;
+				};
+				
+				current.next = current.next.next;
+				this.length -= 1;
+			}
+		};
+	};
+	
+	public void clear() {
+		this.head = null;
+		this.length = 0;
+	};
+	
 	public int getLength() {
 		return this.length;
 	};
