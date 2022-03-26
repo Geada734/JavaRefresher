@@ -204,6 +204,15 @@ public class main {
 		System.out.println(scList);
 	    scList.delete(11);
 		System.out.println(scList);
+		scListEmpty.delete(0);
+		System.out.println(scListEmpty);
+		scListEmpty.delete(0);
+		scListEmpty.add(1111);
+		scListEmpty.add(2222);
+		scListEmpty.add(3333);
+		System.out.println(scListEmpty);
+		scListEmpty.clear();
+		System.out.println(scListEmpty);
 	    System.out.println("******************************");
 	    
 	};

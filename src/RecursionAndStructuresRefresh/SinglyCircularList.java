@@ -138,6 +138,11 @@ public class SinglyCircularList<T>{
 		};
 	};
 	
+	public void clear() {
+		this.head = null;
+		this.length = 0;
+	};
+	
 	public int getLength() {
 		return this.length;
 	};
