@@ -42,6 +42,59 @@ public class SinglyCircularList<T>{
 		
 	};
 	
+	public void add(T data) {
+		this.add(this.length, data);
+	};
+	
+	public void add(int position, T data) {
+		Node current = this.head;
+		Node newNode = new Node(data);
+		int counter = 1;
+		
+		if(current!=null) {
+			if(position<=1) {
+				Node oldHead = current;
+				this.head = newNode;
+				this.head.next = current;
+				
+				while(current.next != oldHead) {
+					current = current.next;
+				};
+				
+				current.next = this.head;
+				this.length += 1;
+			}
+			else if(position>=length){
+				while(current.next != this.head) {
+					current = current.next;
+				};
+				
+				current.next = newNode;
+				newNode.next = this.head;
+				
+				this.length += 1;
+			}
+			else {
+				while(counter<position-1) {
+					current = current.next;
+					counter += 1;
+				};
+				
+				Node temp = current.next;
+				
+				current.next = newNode;
+				newNode.next = temp;
+				
+				this.length += 1;
+			};
+		}
+		
+		else {
+			this.head = new Node(data);
+			this.head.next = this.head;
+		};
+	};
+	
 	public int getLength() {
 		return this.length;
 	};

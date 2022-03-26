@@ -103,7 +103,7 @@ public class main {
 	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
 	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
 	    System.out.println(slList);
-	    System.out.println("-Adding terms");
+	    System.out.println("-Adding nodes");
 	    slList.add(0, 9);
 	    System.out.println(slList);
 	    slList.add(1, 10);
@@ -122,7 +122,7 @@ public class main {
 	    slListEmpty.add(222);
 	    System.out.println(slListEmpty);
 	    // Testing delete function.
-	    System.out.println("-Deleting terms");
+	    System.out.println("-Deleting nodes");
 	    slList.delete(34);
 	    System.out.println(slList);
 	    slList.delete(12);
@@ -140,6 +140,7 @@ public class main {
 	    slListEmpty.delete(0);
 	    System.out.println(slListEmpty);
 	    // Testing clear function
+	    System.out.println("-Clearing the list");
 	    slListEmpty.add(111);
 	    slListEmpty.add(222);
 	    slListEmpty.add(333);
@@ -147,6 +148,7 @@ public class main {
 	    slListEmpty.clear();
 	    System.out.println(slListEmpty);
 	    // Testing update function.
+	    System.out.println("-Updating nodes");
 	    slList.updateNode(-1, 15);
 	    System.out.println(slList);
 	    slList.updateNode(0, 16);
@@ -162,13 +164,36 @@ public class main {
 	    slList.updateNode(6, 21);
 	    System.out.println(slList);
 	    System.out.println("******************************");
+	    */
 		// Singly Linked Circular List
 	    System.out.println("******************************");
 	    Integer[] arr2CList = {1, 2, 3, 4, 5, 6, 7};
 		SinglyCircularList<Integer> scList = new SinglyCircularList(arr2CList);
 		System.out.println(scList);
+	    System.out.println("-Adding nodes");
+	    scList.add(1, 8);
+		System.out.println(scList);
+	    scList.add(0, 9);
+		System.out.println(scList);
+	    scList.add(-1, 10);
+		System.out.println(scList);
+	    scList.add(1, 11);
+		System.out.println(scList);
+	    scList.add(11, 12);
+		System.out.println(scList);
+	    scList.add(1800, 13);
+		System.out.println(scList);
+	    scList.add(13, 14);
+		System.out.println(scList);
+	    scList.add(2, 15);
+		System.out.println(scList);
+	    scList.add(16);
+		System.out.println(scList);
+		SinglyCircularList scListEmpty = new SinglyCircularList();
+		System.out.println(scListEmpty);
+		scListEmpty.add(1111);
+		System.out.println(scListEmpty);
 	    System.out.println("******************************");
-	    */
 	    
 	};
 
