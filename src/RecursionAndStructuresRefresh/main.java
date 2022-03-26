@@ -214,6 +214,21 @@ public class main {
 	    System.out.println("-Clearing the list");
 		scListEmpty.clear();
 		System.out.println(scListEmpty);
+		System.out.println("-Updating nodes");
+	    scList.updateNode(1, 17);
+		System.out.println(scList);
+	    scList.updateNode(0, 18);
+		System.out.println(scList);
+	    scList.updateNode(-1, 19);
+		System.out.println(scList);
+	    scList.updateNode(11, 20);
+		System.out.println(scList);
+	    scList.updateNode(12, 21);
+		System.out.println(scList);
+	    scList.updateNode(2, 22);
+		System.out.println(scList);
+	    scList.updateNode(10, 23);
+		System.out.println(scList);
 	    System.out.println("******************************");
 	    
 	};

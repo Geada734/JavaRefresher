@@ -143,6 +143,36 @@ public class SinglyCircularList<T>{
 		this.length = 0;
 	};
 	
+	public void updateNode(int position, T data) {
+		if(this.head != null) {
+			Node current = this.head;
+			
+			if(position<=1) {
+				this.head.data = data;
+			}
+			else if(position>=this.length) {
+				while(current.next!=this.head) {
+					current = current.next;
+				};
+				
+				current.data = data;
+			}
+			else {
+				int counter = 1;
+				
+				while(counter<position) {
+					current = current.next;
+					counter += 1;
+				};
+				
+				current.data = data;
+			};
+		}
+		else {
+			this.add(data);
+		};
+	};
+	
 	public int getLength() {
 		return this.length;
 	};
