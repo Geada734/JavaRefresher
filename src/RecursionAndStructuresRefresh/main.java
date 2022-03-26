@@ -211,6 +211,7 @@ public class main {
 		scListEmpty.add(2222);
 		scListEmpty.add(3333);
 		System.out.println(scListEmpty);
+	    System.out.println("-Clearing the list");
 		scListEmpty.clear();
 		System.out.println(scListEmpty);
 	    System.out.println("******************************");
