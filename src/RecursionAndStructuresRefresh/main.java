@@ -97,6 +97,8 @@ public class main {
 	    System.out.println("******************************");
 	    */
 		// Exercises on data structures
+		// Singly linked list
+		/*
 	    System.out.println("******************************");
 	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
 	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
@@ -144,6 +146,13 @@ public class main {
 	    System.out.println(slListEmpty);
 	    slListEmpty.clear();
 	    System.out.println(slListEmpty);
+	    System.out.println("******************************");
+	    */
+		// Singly Linked Circular List
+	    System.out.println("******************************");
+	    Integer[] arr2CList = {1, 2, 3, 4, 5, 6, 7};
+		SinglyCircularList<Integer> scList = new SinglyCircularList(arr2CList);
+		System.out.println(scList);
 	    System.out.println("******************************");
 	    
 	};
