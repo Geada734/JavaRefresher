@@ -204,6 +204,40 @@ public class main {
 		return false;
 	};
 	
+	public static String array2DToString(int[][] matrix) {
+		String s = "";
+		
+		for(int i=0; i<matrix.length; i++) {
+			for(int j=0; j<matrix[i].length; j++) {
+				s += matrix[i][j] + " ";
+			};
+			s += "\n";
+		};
+		
+		return s;
+	};
+	
+	public static int[][] plantMines(int[][] mines, int w, int h) {
+		int[][] field = new int[w][h];
+		
+		for(int i=0; i<mines.length; i++) {
+			int x = mines[i][0];
+			int y = mines[i][1];
+			
+			field[x][y] = -1;
+			
+			for(int j=x-1; j<x+2; j++){
+				for(int k=y-1; k<y+2; k++) {
+					if((k>=0 && k<h) && (j>=0 && j<w) && field[j][k]!=-1) {
+						field[j][k] += 1;
+					};
+				};
+			};
+		};
+		
+		return field;
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -227,7 +261,8 @@ public class main {
 	    System.out.println(arrayToString(arr2));
 	    boolean result3 = isRotated(arr1, arr2);
 	    System.out.println("Result: ");
-	    System.out.println(result3);*/
+	    System.out.println(result3);
+	    System.out.println("******************************");
 	    System.out.println("--String Exercises--");
 	    System.out.println("1.- Find first unique character in a string: ");
 	    String test1 = "aabcb";
@@ -263,6 +298,15 @@ public class main {
 	    System.out.println(testA6);
 	    boolean result3 = isOneAway(testA5, testA6);
 	    System.out.println(result3);
+	    System.out.println("******************************");
+	    */
+	    System.out.println("******************************");
+	    System.out.println("--2D Array Exercises--");
+	    System.out.println("1.- Assign bombs and numbers to a mindweeper field");
+	    int[][] mines = {{ 2, 3},{ 2, 1}};
+	    System.out.println(array2DToString(mines));
+	    int[][] field = plantMines(mines, 3, 4);
+	    System.out.println(array2DToString(field));
 	    System.out.println("******************************");
 
 	}
