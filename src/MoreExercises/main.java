@@ -135,6 +135,75 @@ public class main {
 		return null;
 	};
 	
+	public static boolean isOneAway(String a, String b) {
+		if(Math.abs(a.length()-b.length())<=1) {
+			int numberOfChanges = 0;
+			int pA = 0;
+			int pB = 0;
+			
+			// Check for char update
+			if(a.length()==b.length()) {
+				while(pA<a.length()&&pB<b.length()) {
+					if(a.charAt(pA) != b.charAt(pB)) {
+						numberOfChanges++;
+						
+						if(numberOfChanges>1) {
+							return false;
+						};
+					}
+					pA++;
+					pB++;
+				};
+			}
+			// Check for addition
+			else if(a.length()<b.length()) {
+				while(pA<a.length()&&pB<a.length()) {
+					if(a.charAt(pA)==b.charAt(pB)) {
+						pA++;
+						pB++;
+					}
+					else {
+						if(a.charAt(pA)==b.charAt(pB+1)) {
+							numberOfChanges++;
+							pA++;
+							pB++;
+							pB++;
+						}
+						else {
+							return false;
+						};
+					};
+				};
+			}
+			// Check for deletions
+			else {
+				while(pA<a.length()&&pB<b.length()) {
+					if(a.charAt(pA)==b.charAt(pB)) {
+						pA++;
+						pB++;
+					}
+					else {
+						if(a.charAt(pA+1)==b.charAt(pB)) {
+							numberOfChanges++;
+							pA++;
+							pA++;
+							pB++;
+						}
+						else {
+							return false;
+						};
+					};
+				};
+			};
+			
+			if(numberOfChanges<=1) {
+				return true;
+			};
+		};
+		
+		return false;
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -173,6 +242,27 @@ public class main {
 	    System.out.println(test3);
 	    Character sResult3 = getUniqueChar(test3);
 	    System.out.println(sResult3);
+	    System.out.println("2.- Find out if two strings are one edit away from each other");
+	    String testA1 = "abcde";
+	    String testA2 = "abfde";
+	    System.out.println(testA1);
+	    System.out.println(testA2);
+	    boolean result1 = isOneAway(testA1, testA2);
+	    System.out.println(result1);
+	    System.out.println("\n");
+	    String testA3 = "xyz";
+	    String testA4 = "xyaz";
+	    System.out.println(testA3);
+	    System.out.println(testA4);
+	    boolean result2 = isOneAway(testA3, testA4);
+	    System.out.println(result2);
+	    System.out.println("\n");
+	    String testA5 = "abcde";
+	    String testA6 = "abde";
+	    System.out.println(testA5);
+	    System.out.println(testA6);
+	    boolean result3 = isOneAway(testA5, testA6);
+	    System.out.println(result3);
 	    System.out.println("******************************");
 
 	}
