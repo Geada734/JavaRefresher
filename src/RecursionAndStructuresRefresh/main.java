@@ -236,11 +236,12 @@ public class main {
 	    */
 		// Simple Binary Trees
 	    System.out.println("******************************");
-	    SimpleBinaryTree<Integer> binTree = new SimpleBinaryTree(1);
-	    binTree.root.left = binTree.createNode(2);
-	    binTree.root.right = binTree.createNode(3);
-	    binTree.root.left.left = binTree.createNode(4);
-	    binTree.root.left.right = binTree.createNode(5);
+	    System.out.println("-Building a binary tree manually");
+	    SimpleBinaryTree<String> binTree = new SimpleBinaryTree(1);
+	    binTree.root.left = binTree.createNode("2");
+	    binTree.root.right = binTree.createNode("3");
+	    binTree.root.left.left = binTree.createNode("4");
+	    binTree.root.left.right = binTree.createNode("5");
 	    System.out.println(binTree);
 	    System.out.println("******************************");
 	};

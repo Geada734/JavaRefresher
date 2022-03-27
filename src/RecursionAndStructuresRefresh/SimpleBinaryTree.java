@@ -82,6 +82,10 @@ public class SimpleBinaryTree<T> {
 		return s;
 	};
 	
+	public void clear() {
+		this.root = null;
+	};
+	
 	@Override
 	public String toString() {
 		String s =  "Inorder: ";
