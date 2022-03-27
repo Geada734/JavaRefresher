@@ -71,6 +71,39 @@ public class main {
 		return c;
 	};
 	
+	public static boolean isRotated(Integer[] a1, Integer[] a2) {
+		boolean result = false;
+		
+		if(a1.length==a2.length) {
+			int p1 = 0;
+			int p2 = 0;
+			
+			while(p1<a1.length) {
+				if(p2==a2.length) {
+					if(p1>0) {
+						p2 = 0;
+					}
+					else {
+						return false;
+					};
+				}
+				if(a1[p1]==a2[p2]) {
+					p1++;
+					p2++;
+					result = true;
+				}
+				else if(p1>0) {
+					return false;
+				}
+				else {
+					p2++;
+				};
+			};
+		}
+		
+		return result;
+	};
+	
 	public static void main(String[] args) {
 	    System.out.println("******************************");
 	    Integer[] intArr = { 1, 3, 1, 3, 2, 1};
@@ -86,6 +119,14 @@ public class main {
 	    Integer[] result2 = getCommonElements(arrA, arrB);
 	    System.out.println("Result: ");
 	    System.out.println(arrayToString(result2));
+	    System.out.println("3.- Find out if an array of unique elements is a rotation of another: ");
+	    Integer[] arr1 = {1, 2, 3, 4, 5, 6, 7};
+	    Integer[] arr2 = {4, 5, 6, 7, 1, 2 ,3};
+	    System.out.println(arrayToString(arr1));
+	    System.out.println(arrayToString(arr2));
+	    boolean result3 = isRotated(arr1, arr2);
+	    System.out.println("Result: ");
+	    System.out.println(result3);
 	    System.out.println("******************************");
 
 	}
