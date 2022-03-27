@@ -2,8 +2,10 @@ package MoreExercises;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class main {
 
@@ -104,8 +106,38 @@ public class main {
 		return result;
 	};
 	
+	public static Character getUniqueChar(String s) {	
+		Map<Character, Integer> counters = new HashMap<Character, Integer>();
+		
+		for(int i=0; i<s.length(); i++) {
+			char key = s.charAt(i);
+			
+			if(counters.containsKey(key)) {
+				int currentValue = counters.get(key);
+				
+				counters.put(key, currentValue+1);
+			}
+			else {
+				counters.put(key, 1);
+			};
+			
+		};
+		
+		for(int j=0; j<s.length(); j++) {
+			char current = s.charAt(j);
+			
+			if(counters.get(current)==1) {
+				return current;
+			};
+			
+		};
+		
+		return null;
+	};
+	
 	public static void main(String[] args) {
-	    System.out.println("******************************");
+	    /* System.out.println("******************************");
+	    System.out.println("--Array Exercises--");
 	    Integer[] intArr = { 1, 3, 1, 3, 2, 1};
 	    System.out.println("1.- Find most common element in array: ");
 	    System.out.println(arrayToString(intArr));
@@ -126,7 +158,21 @@ public class main {
 	    System.out.println(arrayToString(arr2));
 	    boolean result3 = isRotated(arr1, arr2);
 	    System.out.println("Result: ");
-	    System.out.println(result3);
+	    System.out.println(result3);*/
+	    System.out.println("--String Exercises--");
+	    System.out.println("1.- Find first unique character in a string: ");
+	    String test1 = "aabcb";
+	    String test2 = "xxyz";
+	    String test3 = "aabb";
+	    System.out.println(test1);
+	    Character sResult1 = getUniqueChar(test1);
+	    System.out.println(sResult1);
+	    System.out.println(test2);
+	    Character sResult2 = getUniqueChar(test2);
+	    System.out.println(sResult2);
+	    System.out.println(test3);
+	    Character sResult3 = getUniqueChar(test3);
+	    System.out.println(sResult3);
 	    System.out.println("******************************");
 
 	}
