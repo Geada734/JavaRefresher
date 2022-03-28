@@ -2,10 +2,10 @@ package RecursionAndStructuresRefresh;
 
 //My implementation of a simple binary tree.
 public class SimpleBinaryTree<T> {
-	class Node<T>{
-		T data;
-		Node left;
-		Node right;
+	public class Node<T>{
+		public T data;
+		public Node left;
+		public Node right;
 		
 		Node(T data){
 			this.data = data;
@@ -16,11 +16,11 @@ public class SimpleBinaryTree<T> {
 	
 	public Node root;
 	
-	SimpleBinaryTree(){
+	public SimpleBinaryTree(){
 		this.root = null;
 	};
 	
-	SimpleBinaryTree(T data){
+	public SimpleBinaryTree(T data){
 		this.root = new Node(data);
 	};
 	

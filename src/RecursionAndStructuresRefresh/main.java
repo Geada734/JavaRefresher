@@ -1,5 +1,4 @@
 package RecursionAndStructuresRefresh;
-
 import RecursionAndStructuresRefresh.SimpleBinaryTree.Node;
 
 // Exercises on recursion, data structures, and algorithms.
