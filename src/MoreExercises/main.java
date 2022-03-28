@@ -238,6 +238,30 @@ public class main {
 		return field;
 	};
 	
+	public static void clickOnField(int[][] field, int x, int y) {
+		if(field[x][y] != 0) {
+			return;
+		};
+		
+		field[x][y] = -2;
+		
+		if(x>0) {
+			clickOnField(field, x-1, y);
+		};
+		
+		if(x<field.length-1) {
+			clickOnField(field, x+1, y);
+		};
+		
+		if(y>0) {
+			clickOnField(field, x, y-1);
+		};
+		
+		if(y<field[x].length-1) {
+			clickOnField(field, x, y+1);
+		};
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -303,9 +327,12 @@ public class main {
 	    System.out.println("******************************");
 	    System.out.println("--2D Array Exercises--");
 	    System.out.println("1.- Assign bombs and numbers to a mindweeper field");
-	    int[][] mines = {{ 2, 3},{ 2, 1}};
+	    int[][] mines = {{ 2, 2}};
 	    System.out.println(array2DToString(mines));
-	    int[][] field = plantMines(mines, 3, 4);
+	    int[][] field = plantMines(mines, 3, 5);
+	    System.out.println(array2DToString(field));
+	    System.out.println("2.- Expand mine field on clicking on a 0");
+	    clickOnField(field, 1, 4);
 	    System.out.println(array2DToString(field));
 	    System.out.println("******************************");
 
