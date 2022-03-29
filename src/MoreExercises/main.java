@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import RecursionAndStructuresRefresh.SimpleBinaryTree;
 
@@ -341,6 +342,40 @@ public class main {
 		return s;
 	};
 	
+	public static boolean checkIfBalanced(String s) {
+		Stack<Character> stack = new Stack<Character>();
+		
+		for(int i=0; i<s.length(); i++) {
+			if(s.charAt(i)=='{'||s.charAt(i)=='['||s.charAt(i)=='(') {
+				stack.push(s.charAt(i));
+			}
+			else if(stack.isEmpty()) {
+				return false;
+			}
+			else {
+				switch(s.charAt(i)) {
+				case '}':
+					if(stack.pop()!='{') {
+						return false;
+					};
+					break;
+				case ']':
+					if(stack.pop()!='[') {
+						return false;
+					};
+					break;
+				case ')':
+					if(stack.pop()!='(') {
+						return false;
+					};
+					break;
+				};
+			};
+		};
+		
+		return true;
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -436,8 +471,10 @@ public class main {
 	    System.out.println(getHeight(bTreeH.root));
 	    System.out.println("M.- Level order traversal");
 	    System.out.println(levelOrderTraversal(bTreeH.root));
+	    System.out.println("M.- Balanced brackets");
+	    String s = "{[()]}";
+	    System.out.println(checkIfBalanced(s));
 	    System.out.println("******************************");	
-
 	}
 
 }
