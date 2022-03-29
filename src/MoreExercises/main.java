@@ -274,6 +274,33 @@ public class main {
 		return newMatrix;
 	};
 	
+	
+	public static int getNumberOfWays(int n) {
+		int[] record = new int[n+1];
+		
+		if(n>1) {
+			record[0] = 0;
+			record[1] = 1;
+		};
+		
+		return getNumberOfWaysSub(n, record);
+	};
+	
+	public static int getNumberOfWaysSub(int n, int[] record) {
+		if(n<=1){
+			return 1;
+		}
+		else if(record[n]!=0) {
+			return record[n];
+		}
+		else {
+			record[n] = getNumberOfWaysSub(n-1, record) + getNumberOfWaysSub(n-2, record);
+		};
+		
+		return record[n];
+	};
+
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -335,7 +362,6 @@ public class main {
 	    boolean result3 = isOneAway(testA5, testA6);
 	    System.out.println(result3);
 	    System.out.println("******************************");
-	    */
 	    System.out.println("******************************");
 	    System.out.println("--2D Array Exercises--");
 	    System.out.println("1.- Assign bombs and numbers to a mindweeper field");
@@ -350,8 +376,14 @@ public class main {
 	    int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 	    System.out.println(array2DToString(matrix));
 	    System.out.println(array2DToString(rotate90Degrees(matrix)));
-	    System.out.println("******************************");
-	    
+	    System.out.println("******************************");	
+	    */
+	    System.out.println("******************************");	
+	    System.out.println("--Miscellaneous Exercises--");  
+	    System.out.println("M.- Find how many ways to go up a staircase with n steps.");
+	    System.out.println("For a staircase with 16 steps: ");
+	    System.out.println(getNumberOfWays(16));
+	    System.out.println("******************************");	
 
 	}
 
