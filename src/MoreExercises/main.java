@@ -300,17 +300,45 @@ public class main {
 		return record[n];
 	};
 
-	public static int getHeight(int height, SimpleBinaryTree.Node node) {
+	public static int getHeight(SimpleBinaryTree.Node node) {
 		if(node==null) {
 			return 0;
 		};
 		
-		int heightL = getHeight(height, node.left);
-		int heightR = getHeight(height, node.right);
+		int heightL = getHeight(node.left);
+		int heightR = getHeight(node.right);		
 		
-		height = Math.max(heightR, heightL);
+		return Math.max(heightR, heightL) + 1;
+	};
+	
+	public static String levelOrderTraversal(SimpleBinaryTree.Node root) {
+		int height = getHeight(root);
+		String s = "";
 		
-		return height+1;
+		for(int i=1;i<=height;i++) {
+			s += getCurrentLevel(root, i);		
+		};
+		
+		return s;
+	};
+	
+	public static String getCurrentLevel(SimpleBinaryTree.Node node, int level) {
+		String s = "";
+		
+		if(node==null) {
+			return s;
+		};
+		
+		if(level==1) {
+			return node.data + " ";
+		};
+		
+		if(level>1) {
+			s += getCurrentLevel(node.left, level-1);
+			s += getCurrentLevel(node.right, level-1);
+		};
+		
+		return s;
 	};
 	
 	public static void main(String[] args) {
@@ -405,7 +433,9 @@ public class main {
 	    bTreeH.root.right.right.right = bTreeH.createNode(7);
 	    System.out.println(bTreeH);
 	    System.out.println("Height: ");
-	    System.out.println(getHeight(0, bTreeH.root));
+	    System.out.println(getHeight(bTreeH.root));
+	    System.out.println("M.- Level order traversal");
+	    System.out.println(levelOrderTraversal(bTreeH.root));
 	    System.out.println("******************************");	
 
 	}
