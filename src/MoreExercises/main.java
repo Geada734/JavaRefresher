@@ -300,6 +300,18 @@ public class main {
 		return record[n];
 	};
 
+	public static int getHeight(int height, SimpleBinaryTree.Node node) {
+		if(node==null) {
+			return 0;
+		};
+		
+		int heightL = getHeight(height, node.left);
+		int heightR = getHeight(height, node.right);
+		
+		height = Math.max(heightR, heightL);
+		
+		return height+1;
+	};
 	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
@@ -383,6 +395,17 @@ public class main {
 	    System.out.println("M.- Find how many ways to go up a staircase with n steps.");
 	    System.out.println("For a staircase with 16 steps: ");
 	    System.out.println(getNumberOfWays(16));
+	    System.out.println("M.- The height of a binary tree");
+	    SimpleBinaryTree<Integer> bTreeH = new SimpleBinaryTree(3);
+	    bTreeH.root.left = bTreeH.createNode(2);
+	    bTreeH.root.left.left = bTreeH.createNode(1);
+	    bTreeH.root.right = bTreeH.createNode(6);
+	    bTreeH.root.right.left = bTreeH.createNode(4);
+	    bTreeH.root.right.right = bTreeH.createNode(5);
+	    bTreeH.root.right.right.right = bTreeH.createNode(7);
+	    System.out.println(bTreeH);
+	    System.out.println("Height: ");
+	    System.out.println(getHeight(0, bTreeH.root));
 	    System.out.println("******************************");	
 
 	}
