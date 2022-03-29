@@ -1,6 +1,7 @@
 package MoreExercises;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +14,18 @@ import RecursionAndStructuresRefresh.SimpleBinaryTree;
 public class main {
 	// Common interview questions.
 	public static String arrayToString(Integer[] arr) {
+		String s = "[";
+		
+		for(int i=0; i<arr.length; i++) {
+			s += " " + arr[i];
+		};
+		
+		s += " ]";
+		
+		return s;
+	};
+	
+	public static String doubleArrayToString(Double[] arr) {
 		String s = "[";
 		
 		for(int i=0; i<arr.length; i++) {
@@ -376,6 +389,34 @@ public class main {
 		return true;
 	};
 	
+	public static Double[] findRunningMedian(int[] arr) {
+		ArrayList<Double> runningMedians = new ArrayList<Double>();
+		ArrayList<Integer> runningArr = new ArrayList<Integer>();
+		
+		for(int i=0;i<arr.length;i++) {
+			runningArr.add(arr[i]);
+			Collections.sort(runningArr);
+			
+			if(runningArr.size()%2==1) {
+				int medianPosition = (int) Math.floor(runningArr.size()/2);
+				Double median = (double)runningArr.get(medianPosition);
+				
+				runningMedians.add(median);
+			}
+			else {
+				int firstPosition = runningArr.size()/2 - 1;
+				int secondPosition = firstPosition + 1;
+				Double median = ((double)runningArr.get(firstPosition) + (double)runningArr.get(secondPosition)) / 2;
+				
+				runningMedians.add(median);
+			};
+		};
+		
+		Double[] medians = runningMedians.toArray(new Double[0]);
+		
+		return medians;
+	};;
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -474,6 +515,9 @@ public class main {
 	    System.out.println("M.- Balanced brackets");
 	    String s = "{[()]}";
 	    System.out.println(checkIfBalanced(s));
+	    System.out.println("M.- Find running median");
+	    int[] arr = {7, 3, 5, 2};
+	    System.out.println(doubleArrayToString(findRunningMedian(arr)));
 	    System.out.println("******************************");	
 	}
 
