@@ -22,19 +22,34 @@ public class main {
 	public static boolean addsUp(int k, int[] arr) {
 		Set<Integer> intSet = new HashSet<Integer>();
 		
-		for(int i=0; i<arr.length; i++) {
-			intSet.add(k-arr[i]);
-			
+		for(int i=0; i<arr.length; i++) {		
 			if(intSet.contains(arr[i])) {
 				return true;
 			};
+			
+			intSet.add(k-arr[i]);
 		};
 		
 		return false;
 	};
 	
+	public static int[] allProductsExceptMine(int[] arr) {
+		int[] results = new int[arr.length];
+		int product = 1;
+		
+		for(int i=0; i<arr.length; i++) {
+			product *= arr[i];
+		};
+		
+		for(int j=0; j<arr.length; j++) {
+			results[j] = product/arr[j];
+		};
+		
+		return results;
+	};
+	
 	public static void main(String[] args) {
-	    System.out.println("******************************");
+	    /*System.out.println("******************************");
 	    System.out.println("1.-Given a list of numbers and a number k,\n"
 	    		+ "return whether any two numbers from the list add \n"
 	    		+ "up to k.");
@@ -43,7 +58,15 @@ public class main {
 	    System.out.println(arrayToString(arr));
 	    System.out.println("k="+k);
 	    System.out.println("Result:");
-	    System.out.println(addsUp(k, arr));
+	    System.out.println(addsUp(k, arr)); */
+	    System.out.println("******************************");
+	    System.out.println("2.-Given an array of integers, return a \n"
+	    		+ "new array such that each element at index i of \n"
+	    		+ "the new array is the product of all the numbers \n"
+	    		+ "in the original array except the one at i.");
+	    int[] arrEM = {1, 2, 3, 4, 5}; 
+	    System.out.println(arrayToString(arrEM));
+	    System.out.println(arrayToString(allProductsExceptMine(arrEM)));
 	    System.out.println("******************************");
 	}
 
