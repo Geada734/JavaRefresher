@@ -417,6 +417,26 @@ public class main {
 		return medians;
 	};
 	
+	public static int findMissingNumber(Integer[] arr) {
+		int n = arr.length + 1;
+		int sum = sum(n);
+		int arrSum = 0;
+		
+		for(int i=0; i<arr.length; i++) {
+			arrSum += arr[i];
+		};
+		
+		return sum-arrSum;
+	};
+	
+	public static int sum(int n) {
+		if(n==1) {
+			return 1;
+		};
+		
+		return n += sum(n-1);
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -493,7 +513,7 @@ public class main {
 	    System.out.println(array2DToString(matrix));
 	    System.out.println(array2DToString(rotate90Degrees(matrix)));
 	    System.out.println("******************************");	
-	    System.out.println("******************************");	
+	    System.out.println("******************************"); */	
 	    System.out.println("--Miscellaneous Exercises--");  
 	    System.out.println("M.- Find how many ways to go up a staircase with n steps.");
 	    System.out.println("For a staircase with 16 steps: ");
@@ -517,7 +537,11 @@ public class main {
 	    System.out.println("M.- Find running median");
 	    int[] arr = {7, 3, 5, 2};
 	    System.out.println(doubleArrayToString(findRunningMedian(arr)));
-	    System.out.println("******************************");	*/
+	    System.out.println("M.-Find the missing number in the array");
+	    Integer[] arrNums = {3, 7, 1, 2, 8, 4, 5};
+	    System.out.println(arrayToString(arrNums));
+	    System.out.println(findMissingNumber(arrNums));
+	    System.out.println("******************************");
 	}
 
 }
