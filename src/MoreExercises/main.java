@@ -415,7 +415,7 @@ public class main {
 		Double[] medians = runningMedians.toArray(new Double[0]);
 		
 		return medians;
-	};;
+	};
 	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
@@ -493,7 +493,6 @@ public class main {
 	    System.out.println(array2DToString(matrix));
 	    System.out.println(array2DToString(rotate90Degrees(matrix)));
 	    System.out.println("******************************");	
-	    */
 	    System.out.println("******************************");	
 	    System.out.println("--Miscellaneous Exercises--");  
 	    System.out.println("M.- Find how many ways to go up a staircase with n steps.");
@@ -518,7 +517,7 @@ public class main {
 	    System.out.println("M.- Find running median");
 	    int[] arr = {7, 3, 5, 2};
 	    System.out.println(doubleArrayToString(findRunningMedian(arr)));
-	    System.out.println("******************************");	
+	    System.out.println("******************************");	*/
 	}
 
 }
