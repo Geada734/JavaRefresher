@@ -454,6 +454,19 @@ public class main {
 		return true;
 	};
 	
+	public static Integer getWaysToGetChange(Integer[] denoms, int n) {
+		int sums[] = new int[n+1];
+		sums[0] = 1;
+		
+		for(int i=0;i<denoms.length;i++) {
+			for(int j=denoms[i];j<n+1;j++) {
+				sums[j] += sums[j-denoms[i]];
+			};
+		};
+		
+		return sums[n];
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -571,6 +584,13 @@ public class main {
 	    bTreeBST.root.right.right = bTreeBST.createNode(350);
 	    System.out.println(bTreeBST);
 	    System.out.println(determineIfBST(bTreeBST.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+	    System.out.println("M.-Find out how many combinations of change can be given with given denominations and quantity");
+	    Integer[] denoms = {1, 2, 5};
+	    int quantity = 7;
+	    System.out.println("Quantity: " + quantity);
+	    System.out.println("Denominations: ");
+	    System.out.println(arrayToString(denoms));
+	    System.out.println(getWaysToGetChange(denoms, quantity));
 	    System.out.println("******************************");
 	}
 
