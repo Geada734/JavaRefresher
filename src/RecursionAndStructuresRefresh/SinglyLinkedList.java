@@ -2,25 +2,25 @@ package RecursionAndStructuresRefresh;
 
 // My implementation of a linked list.
 public class SinglyLinkedList<T>{
-	class Node<T>{
-		T data;
-		Node next;
+	public static class Node<T>{
+		public T data;
+		public Node next;
 		
-		Node(T data){
+		public Node(T data){
 			this.data = data;
 			this.next = null;
 		};
 	};
 	
-	private Node head;
-	private int length;
+	public Node head;
+	public int length;
 	
-	SinglyLinkedList(){
+	public SinglyLinkedList(){
 		this.head = null;
 		this.length = 0;
 	};
 	
-	SinglyLinkedList(T[] arr){
+	public SinglyLinkedList(T[] arr){
 		this.head = new Node(arr[0]);
 		this.length = arr.length;
 		Node current = this.head;

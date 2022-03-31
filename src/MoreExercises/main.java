@@ -1,6 +1,7 @@
 package MoreExercises;
 
 import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,6 +11,7 @@ import java.util.Set;
 import java.util.Stack;
 
 import RecursionAndStructuresRefresh.SimpleBinaryTree;
+import RecursionAndStructuresRefresh.SinglyLinkedList;
 
 public class main {
 	// Common interview questions.
@@ -528,7 +530,7 @@ public class main {
 	    bTreeH.root.right.right.right = bTreeH.createNode(7);
 	    System.out.println(bTreeH);
 	    System.out.println("Height: ");
-	    System.out.println(getHeight(bTreeH.root));
+	    System.out.println(bTreeH.getHeight(bTreeH.root));
 	    System.out.println("M.- Level order traversal");
 	    System.out.println(levelOrderTraversal(bTreeH.root));
 	    System.out.println("M.- Balanced brackets");
@@ -541,6 +543,9 @@ public class main {
 	    Integer[] arrNums = {3, 7, 1, 2, 8, 4, 5};
 	    System.out.println(arrayToString(arrNums));
 	    System.out.println(findMissingNumber(arrNums));
+	    System.out.println("M.-Merge two sorted linked lists");
+	    Integer[] arr1 = {4, 8, 15, 19};
+	    SinglyLinkedList<Integer> sLL1 = new SinglyLinkedList<Integer>(arr1);
 	    System.out.println("******************************");
 	}
 

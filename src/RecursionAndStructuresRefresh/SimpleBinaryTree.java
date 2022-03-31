@@ -82,6 +82,46 @@ public class SimpleBinaryTree<T> {
 		return s;
 	};
 	
+	public int getHeight(Node current) {
+		if(current==null) {
+			return 0;
+		};
+		
+		int heightLeft = getHeight(current.left);
+		int heightRight = getHeight(current.right);
+		
+		return Math.max(heightLeft,heightRight) + 1;
+	};
+	
+	public String levelOrderTraversal(Node root) {
+		String s = "";
+		int height = this.getHeight(root);
+		if(height>0) {
+			for(int i=1; i<=height; i++) {
+				s += getCurrentLevel(i, root);
+			};
+		};
+		
+		return s;
+	};
+	
+	public String getCurrentLevel(int i, Node current) {
+		String s = "";
+		if(current==null) {
+			return "";
+		};
+		if(i==1) {
+			return current.data + " ";
+		};
+		
+		if(i>1) {
+			s += getCurrentLevel(i-1, current.left);
+			s += getCurrentLevel(i-1, current.right);
+		};
+		
+		return s;
+	};
+	
 	public void clear() {
 		this.root = null;
 	};
@@ -94,6 +134,8 @@ public class SimpleBinaryTree<T> {
 		s += this.preOrder(this.root);
 		s +=  "\nPostorder: ";
 		s += this.postOrder(this.root);
+		s += "\nLevel Order: ";
+		s += this.levelOrderTraversal(this.root);
 		return s;
 	};
 }

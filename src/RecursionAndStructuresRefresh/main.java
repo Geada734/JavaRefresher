@@ -97,10 +97,10 @@ public class main {
 	    System.out.println(bottomUpFibonacci);
 	    System.out.println("******************************");
 	    */
-		/*
+		
 		// Exercises on data structures
 		// Singly linked list
-	    System.out.println("******************************");
+	    /* System.out.println("******************************");
 	    Integer[] arr2List = {1, 2, 3, 4, 5, 6, 7};
 	    SinglyLinkedList<Integer> slList = new SinglyLinkedList(arr2List);
 	    System.out.println(slList);
@@ -232,7 +232,6 @@ public class main {
 	    scList.updateNode(10, 23);
 		System.out.println(scList);
 	    System.out.println("******************************");
-	    */
 		// Simple Binary Trees
 	    System.out.println("******************************");
 	    System.out.println("-Building a binary tree manually");
@@ -243,6 +242,7 @@ public class main {
 	    binTree.root.left.right = binTree.createNode("5");
 	    System.out.println(binTree);
 	    System.out.println("******************************");
+	    */
 	};
 
 };
