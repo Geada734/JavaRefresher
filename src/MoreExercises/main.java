@@ -439,6 +439,21 @@ public class main {
 		return n += sum(n-1);
 	};
 	
+	public static boolean determineIfBST(SimpleBinaryTree.Node current, Integer min, Integer max) {
+		if(current!=null) {
+			if((int)current.data<min || (int)current.data>max) {
+				return false;
+			};
+			
+			boolean resultLeft = determineIfBST(current.left, min, (int)current.data);
+			boolean resultRight = determineIfBST(current.right, (int)current.data, max);
+			
+			return resultLeft && resultRight;
+		};
+		
+		return true;
+	};
+	
 	public static void main(String[] args) {
 	    /* System.out.println("******************************");
 	    System.out.println("--Array Exercises--");
@@ -546,6 +561,16 @@ public class main {
 	    System.out.println("M.-Merge two sorted linked lists");
 	    Integer[] arr1 = {4, 8, 15, 19};
 	    SinglyLinkedList<Integer> sLL1 = new SinglyLinkedList<Integer>(arr1);
+	    System.out.println("M.-Determine if a Binary Tree is a BST");
+	    SimpleBinaryTree<Integer> bTreeBST = new SimpleBinaryTree<Integer>(100);
+	    bTreeBST.root.left = bTreeBST.createNode(50);
+	    bTreeBST.root.right = bTreeBST.createNode(200);
+	    bTreeBST.root.left.left = bTreeBST.createNode(25);
+	    bTreeBST.root.left.right = bTreeBST.createNode(75);
+	    bTreeBST.root.right.left = bTreeBST.createNode(190);
+	    bTreeBST.root.right.right = bTreeBST.createNode(350);
+	    System.out.println(bTreeBST);
+	    System.out.println(determineIfBST(bTreeBST.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 	    System.out.println("******************************");
 	}
 
