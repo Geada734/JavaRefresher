@@ -93,7 +93,33 @@ public class main {
 		result.add(shipped);
 		
 		return result;
-	};;
+	};
+	
+	public static int diferencesCount(int[] arr, int k) {
+		int count = 0;
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=i+1; j<arr.length; j++) {
+				if(Math.abs(arr[i]-arr[j])<k) {
+					count ++;
+				};
+			};
+		};
+		
+		return count;
+	};
+	
+	public static String intArrayToString(int[] arr) {
+		String s = "[ ";
+		
+		for(int i=0; i<arr.length; i++) {
+			s += arr[i] + " ";
+		};
+		
+		s += "]";
+		
+		return s;
+	};
 	
 	public static void main(String[] args) {
 	    System.out.println("******************************");
@@ -113,6 +139,16 @@ public class main {
 	    inputCommands(input, commandsArr);
 	    System.out.println(listOfListsToString(input));
 	    System.out.println(listToString(ship(input)));
+	    System.out.println("2.- An array of integers is given along\n"
+	    					+ "an integer k, return how many pairs of\n"
+	    					+ "numbers are there in the array where the\n"
+	    					+ "diference between them is less than k.");
+	    int[] intArr = {1, 8, 7};
+	    int k = 7;
+	    System.out.println("k: " + k);
+	    System.out.println("Int array:");
+	    System.out.println(intArrayToString(intArr));
+	    System.out.println(diferencesCount(intArr, k));
 	    System.out.println("******************************");
 	}
 
