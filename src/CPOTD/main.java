@@ -49,16 +49,16 @@ public class main {
 	};
 	
 	public static void main(String[] args) {
-	    /*System.out.println("******************************");
+	    System.out.println("******************************");
 	    System.out.println("1.-Given a list of numbers and a number k,\n"
 	    		+ "return whether any two numbers from the list add \n"
 	    		+ "up to k.");
 	    int k = 17;
 	    int[] arr1 = {10, 3, 15, 7};
-	    System.out.println(arrayToString(arr));
+	    System.out.println(arrayToString(arr1));
 	    System.out.println("k="+k);
 	    System.out.println("Result:");
-	    System.out.println(addsUp(k, arr)); 
+	    System.out.println(addsUp(k, arr1)); 
 	    System.out.println("******************************");
 	    System.out.println("2.-Given an array of integers, return a \n"
 	    		+ "new array such that each element at index i of \n"
@@ -67,7 +67,7 @@ public class main {
 	    int[] arr2 = {1, 2, 3, 4, 5}; 
 	    System.out.println(arrayToString(arr2));
 	    System.out.println(arrayToString(allProductsExceptMine(arr2))); 
-	    System.out.println("******************************"); */
+	    System.out.println("******************************");
 	}
 
 }
