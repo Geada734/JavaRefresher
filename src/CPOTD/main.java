@@ -69,6 +69,26 @@ public class main {
 	    System.out.println(arrayToString(arr2));
 	    System.out.println(arrayToString(allProductsExceptMine(arr2))); 
 	    System.out.println("******************************");
+	    System.out.println("3.-Implement a stack that has the following methods:\n"
+	    		+ "push, pop, and max.");
+	    MyStack myStack = new MyStack();
+	    System.out.println("New Stack: ");
+	    System.out.println(myStack);
+	    System.out.println("Adding Elements: ");
+	    myStack.push(1);
+	    myStack.push(2);
+	    myStack.push(3);
+	    System.out.println(myStack);
+	    System.out.println("Checking for max: ");
+	    System.out.println(myStack.max());
+	    System.out.println("Popping elements: ");
+	    myStack.pop();
+	    System.out.println(myStack);
+	    myStack.pop();
+	    System.out.println(myStack);
+	    myStack.pop();
+	    System.out.println(myStack);
+	    System.out.println("******************************");
 	}
 
 }

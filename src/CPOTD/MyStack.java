@@ -42,4 +42,18 @@ public class MyStack {
 		
 		return max;
 	};
+	
+	@Override
+	public String toString() {
+		String s = "[ ";
+		Iterator<Integer> iter = this.coreList.iterator();
+		
+		while(iter.hasNext()) {
+			s += iter.next() + " ";
+		};
+		
+		s += "]";
+	
+		return s;
+	};
 }
