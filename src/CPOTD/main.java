@@ -49,6 +49,17 @@ public class main {
 		return results;
 	};
 	
+	public static int findIndexOfInt(int[] arr, int x) {
+		
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]==x) {
+				return i;
+			};
+		};
+		
+		return -1;
+	};
+	
 	public static void main(String[] args) {
 	    System.out.println("******************************");
 	    System.out.println("1.-Given a list of numbers and a number k,\n"
@@ -88,6 +99,15 @@ public class main {
 	    System.out.println(myStack);
 	    myStack.pop();
 	    System.out.println(myStack);
+	    System.out.println("******************************");
+	    System.out.println("4.-Given an unsorted integer array with unique elements,\n"
+	    		+ "find the index of a given integer x, return -1 if it's not in\n"
+	    		+ "in the array.");
+	    int[] arr3 = {13, 18, 25, 2, 8, 10};
+	    System.out.println(arrayToString(arr3));
+	    int x = 8;
+	    System.out.println("Find " + x);
+	    System.out.println(findIndexOfInt(arr3, x));
 	    System.out.println("******************************");
 	}
 
