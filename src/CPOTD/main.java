@@ -100,7 +100,8 @@ public class main {
 	    myStack.pop();
 	    System.out.println(myStack);
 	    System.out.println("******************************");
-	    System.out.println("4.-Given an unsorted integer array with unique elements,\n"
+	    System.out.println("4.-Given an sorted integer array with unique elements\n"
+	    		+ "that has been rotated an unknown number of times,\n"
 	    		+ "find the index of a given integer x, return -1 if it's not in\n"
 	    		+ "in the array.");
 	    int[] arr3 = {13, 18, 25, 2, 8, 10};
